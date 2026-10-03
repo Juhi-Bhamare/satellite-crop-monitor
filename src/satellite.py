@@ -56,9 +56,29 @@ STUDY_AREAS = {
 
 
 
+
 def initialize_earth_engine():
-    """Connect Python to Google Earth Engine."""
-    ee.Initialize(project="satellite-crop-monitor")
+    """Initialize Earth Engine using cloud secrets or local credentials."""
+
+    import streamlit as st
+    import ee
+
+    if "gcp_service_account" in st.secrets:
+        credentials_info = st.secrets["gcp_service_account"]
+
+        credentials = ee.ServiceAccountCredentials(
+            credentials_info["client_email"],
+            key_data=credentials_info["private_key"],
+        )
+
+        ee.Initialize(
+            credentials,
+            project=credentials_info["project_id"],
+        )
+    else:
+        # Use your existing local Earth Engine login.
+        ee.Initialize(project="satellite-crop-monitor")
+
 
 
 def get_sentinel2_ndvi(
