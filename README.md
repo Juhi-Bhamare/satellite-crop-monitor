@@ -6,6 +6,24 @@ An interactive web application for exploring vegetation conditions using Sentine
 
 **[Open the Satellite Crop Monitor](https://satellite-crop-monitor.streamlit.app/)**
 
+
+## 🖥️ Dashboard Preview
+
+### Dashboard Overview
+![Dashboard Overview](screenshots/dashboard.png)
+
+### Interactive NDVI Map
+![NDVI Map](screenshots/ndvi-map.png)
+
+### Monthly NDVI Trend
+![Monthly NDVI Trend](screenshots/monthly-trend.png)
+
+### Monthly NDVI Data
+![Monthly NDVI Data](screenshots/monthly-trend-table.png)
+
+### Monthly Vegetation Trend
+![Monthly NDVI Trend](screenshots/monthly-trend.png)
+
 ## 📌 Project Overview
 
 This project uses satellite-derived vegetation indices to visualize vegetation greenness across selected study areas. Users can select a location, choose a date range, adjust the maximum cloud-cover threshold, and explore NDVI maps and monthly trends.
